@@ -1,26 +1,44 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Colores</title>
+  <title>4 Colores</title>
   <link rel="stylesheet" href="./essets/css/style.css" />
 </head>
+
 <body>
 
-  <h2>Cuadrados iniciales</h2>
+  <h2>4 Colores (click → negro)</h2>
+
   <div class="container" id="colorsContainer">
-    <div id="blue" class="box">blue</div>
-    <div id="red" class="box">red</div>
-    <div id="green" class="box">green</div>
-    <div id="yellow" class="box">yellow</div>
+
+    <div id="blue"
+      style="width:200px; height:200px; background:blue; display:inline-block; margin:10px;">
+    </div>
+
+    <div id="red"
+      style="width:200px; height:200px; background:red; display:inline-block; margin:10px;">
+    </div>
+
+    <div id="green"
+      style="width:200px; height:200px; background:green; display:inline-block; margin:10px;">
+    </div>
+
+    <div id="yellow"
+      style="width:200px; height:200px; background:yellow; display:inline-block; margin:10px;">
+    </div>
+
   </div>
 
-  <h2>Key color</h2>
-  <div id="key">key</div>
+  <h2>Div KEY (a/s/d)</h2>
+  <div id="key"
+       style="width:200px; height:200px; border:1px solid black; background:white; margin-top:20px;">
+  </div>
 
   <h2>Generados (q/w/e)</h2>
-  <div id="generatedContainer" class="container"></div>
+  <div id="generatedContainer" style="display:flex; flex-wrap:wrap;"></div>
 
   <script src="./essets/Js/scriptcolores.js"></script>
 </body>

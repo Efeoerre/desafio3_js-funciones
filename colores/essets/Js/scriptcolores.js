@@ -1,50 +1,64 @@
 
-const ids = ['blue', 'red', 'green', 'yellow'];
+
+const ids = ["blue", "red", "green", "yellow"];
+
 ids.forEach(id => {
-  const el = document.getElementById(id);
-  if (el) {
-    el.addEventListener('click', function () {
-      this.style.backgroundColor = 'black';
-    });
-  }
+  const div = document.getElementById(id);
+
+  div.addEventListener("click", function () {
+    div.style.backgroundColor = "black";
+  });
 });
 
-let currentKeyColor = null;
-const keyDiv = document.getElementById('key');
 
-document.addEventListener('keydown', function (event) {
+
+let currentColor = "";
+
+
+const keyDiv = document.getElementById("key");
+
+
+const generatedContainer = document.getElementById("generatedContainer");
+
+
+
+document.addEventListener("keydown", function (event) {
   const key = event.key;
 
-  if (key === 'a') {
-    currentKeyColor = 'pink';
-    keyDiv.style.backgroundColor = currentKeyColor;
-  } else if (key === 's') {
-    currentKeyColor = 'orange';
-    keyDiv.style.backgroundColor = currentKeyColor;
-  } else if (key === 'd') {
-    currentKeyColor = 'skyblue';
-    keyDiv.style.backgroundColor = currentKeyColor;
+  
+  if (key === "a") {
+    currentColor = "pink";
+    keyDiv.style.backgroundColor = currentColor;
+
+  } else if (key === "s") {
+    currentColor = "orange";
+    keyDiv.style.backgroundColor = currentColor;
+
+  } else if (key === "d") {
+    currentColor = "skyblue";
+    keyDiv.style.backgroundColor = currentColor;
   }
 
-  const genContainer = document.getElementById('generatedContainer');
 
-  if (key === 'q') {
-    const newDiv = document.createElement('div');
-    newDiv.className = 'box';
-    newDiv.style.background = 'purple';
-    newDiv.textContent = 'morado';
-    genContainer.appendChild(newDiv);
-  } else if (key === 'w') {
-    const newDiv = document.createElement('div');
-    newDiv.className = 'box';
-    newDiv.style.background = 'gray';
-    newDiv.textContent = 'gris';
-    genContainer.appendChild(newDiv);
-  } else if (key === 'e') {
-    const newDiv = document.createElement('div');
-    newDiv.className = 'box';
-    newDiv.style.background = 'brown';
-    newDiv.textContent = 'café';
-    genContainer.appendChild(newDiv);
+  if (key === "q") {
+    createColorBox("purple");
+
+  } else if (key === "w") {
+    createColorBox("gray");
+
+  } else if (key === "e") {
+    createColorBox("brown");
   }
 });
+
+
+function createColorBox(color) {
+  const box = document.createElement("div");
+  box.style.width = "200px";
+  box.style.height = "200px";
+  box.style.backgroundColor = color;
+  box.style.border = "1px solid black";
+  box.style.margin = "10px";
+
+  generatedContainer.appendChild(box);
+}
